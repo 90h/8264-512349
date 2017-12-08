@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>逆流之河</title>
+</head>
+<body style="width: 960px; margin:0 auto">
+    <h1 style="text-align: center">逆流之河</h1>
+
+    {% for r in result %}
+    <div style="border: 2px solid #e3e3e3; margin-top: 10px; padding: 30px">
+        <div style="border-bottom: 2px solid #e3e3e3;margin-bottom: 20px">
+            {{r[0]}}楼 - {{r[1]}} - {{r[3]}}
+        </div>
+        <div>
+            {{r[2]|safe}}
+        </div>
+    </div>
+    {% endfor %}
+
+    <script>
+    var imgArr = document.getElementsByTagName('img');
+    for (var i=0; i<imgArr.length; i++){
+        var e = imgArr[i];
+        e.src = e.getAttribute('file');
+        e.style.width='896px';
+    }
+    </script>
+</body>
+</html>
